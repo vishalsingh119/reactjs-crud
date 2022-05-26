@@ -1,7 +1,7 @@
 import Card from '../../components/Card/Card';
-import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import './UserList.scss';
+import UserService from '../../Services/UserService';
 
 const UserList = () => {
 	const [user, setUser] = useState([]);
@@ -11,10 +11,12 @@ const UserList = () => {
 	},[])
 
 	const loadUserData = async () =>{
-		const resp = await axios.get('http://localhost:3333/users');
-		setUser(resp.data);
-		console.log(resp.data)
-		console.log(user)
+		UserService.getUserList()
+		.then(response => {
+			setUser(response)
+		}).catch( err => {
+			console.log(err)
+		})
 	}
 
 	return (
