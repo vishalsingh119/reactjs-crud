@@ -19,6 +19,13 @@ export default {
 			throw error;
 		}
 	},
+	createUser: async (user) => {
+		try{
+			const resp = await axios.post(`http://localhost:3333/users/`, user);
+		} catch(error){
+			throw error;
+		}
+	},
 
 	deleteUser: async (id) => {
 		try{

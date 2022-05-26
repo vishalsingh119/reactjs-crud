@@ -28,11 +28,11 @@ const Card = (props) => {
 	const deleteUser = async (id) => {
 		UserService.deleteUser(id)
 		.then(response => {
-			setUsers(response)
+			setUsers(response);
+			loadUserData();
 		}).catch( err => {
 			console.log(err)
 		})
-		loadUserData();
 	}
 
 	return (
@@ -53,10 +53,11 @@ const Card = (props) => {
 						<div className="info-text">{user.phone}</div>
 					</div>
 
-					<div className="info-list">
+					{user.website ? <div className="info-list">
 						<FontAwesomeIcon icon={faGlobe} />
 						<div className="info-text">{user.website}</div>
-					</div>
+					</div>: null }
+					
 				</div>
 			</div>
 				{/* user action's like edit, delete etc */}
