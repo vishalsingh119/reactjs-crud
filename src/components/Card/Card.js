@@ -1,6 +1,6 @@
 import './Card.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faPhone, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faEnvelope, faPhone, faGlobe,faPenToSquare,faTrash,faHeart } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -31,6 +31,26 @@ const Card = (props) => {
 					</div>
 				</div>
 			</div>
+				{/* user action's like edit, delete etc */}
+				<div class="user-action">
+					<div class="action-list">
+						<button className="btn-icon" title="Like">
+							<FontAwesomeIcon className="icon-heart" icon={faHeart} />
+						</button>
+					</div>
+
+					<div class="action-list">
+						<button className="btn-icon" title="Edit User">
+							<FontAwesomeIcon className="icon-pencil" icon={faPenToSquare} />
+						</button>
+					</div>
+
+					<div class="action-list">
+						<button className="btn-icon" title="Delete User">
+							<FontAwesomeIcon className="icon-trash" icon={faTrash} />
+						</button>
+					</div>
+				</div>
       </div>
 	  </>
 	)
