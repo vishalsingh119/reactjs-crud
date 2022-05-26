@@ -1,9 +1,10 @@
 import React, {useState,useEffect} from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import axios from 'axios';
 import UserService from '../../Services/UserService';
 
 const EditUser = () => {
+	const { id } = useParams();
 	const history = useNavigate();
 	const [user, setUser] = useState({
 		name: '',
@@ -18,12 +19,21 @@ const EditUser = () => {
 		setUser({...user, [e.target.name]: e.target.value})
 	}
 
+	useEffect(() => {
+		loadUser();
+	  }, []);
+
 	const onSubmit = async (e)=>{
 		e.preventDefault();
-		await UserService.createUser(user); 
+		await UserService.updateUser(id, user); 
 		//after submit redirect user to home page
 		history("/");
 	}
+
+	const loadUser = async () => {
+		const result = await UserService.getUser(id);
+		setUser(result);
+	  };
 
 	return (
 		<div className="container">
@@ -34,10 +44,10 @@ const EditUser = () => {
 					</div>
 					<div className="panel-content">
 						<form onSubmit={e=> onSubmit(e)}>
-							<div class="form-wrapper">
-								<div class="left-wrapper">
-									<div class="form-group">
-										<label for="username">Username</label>
+							<div className="form-wrapper">
+								<div className="left-wrapper">
+									<div className="form-group">
+										<label htmlFor="username">Username</label>
 										<input 
 											type="text"  
 											placeholder='Enter User Name'
@@ -46,8 +56,8 @@ const EditUser = () => {
 											onChange={e=> onInputChange(e)}
 											required="required"/>
 									</div>
-									<div class="form-group">
-										<label for="name">Name</label>
+									<div className="form-group">
+										<label htmlFor="name">Name</label>
 										<input 
 											type="text"  
 											placeholder='Enter Name'
@@ -58,9 +68,9 @@ const EditUser = () => {
 									</div>
 								</div>
 
-								<div class="right-wrapper">
-									<div class="form-group">
-										<label for="name">Email</label>
+								<div className="right-wrapper">
+									<div className="form-group">
+										<label htmlFor="name">Email</label>
 										<input 
 											type="email"  
 											placeholder='Enter Email'
@@ -69,8 +79,8 @@ const EditUser = () => {
 											onChange={e=> onInputChange(e)}
 											required="required"/>
 									</div>
-									<div class="form-group">
-										<label for="name">Phone</label>
+									<div className="form-group">
+										<label htmlFor="name">Phone</label>
 										<input 
 											type="text"  
 											placeholder='Enter Phone No.'
@@ -82,8 +92,8 @@ const EditUser = () => {
 								</div>
 							</div>
 
-							<div class="form-group">
-								<button type="submit" className="submit-btn">Register</button>
+							<div className="form-group">
+								<button type="submit" className="submit-btn">Update User</button>
 							</div>
 							
 						</form>

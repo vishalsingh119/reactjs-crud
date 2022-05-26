@@ -17,9 +17,8 @@ const Navbar = () => {
                 <span className="line line3"></span>
             </div>
 
-            <h1 className="logo">React App</h1>
+            <h1 className="logo"><Link className="navbar-brand" to="/">React App</Link></h1>
             <ul className="menu-items">
-                <li><Link className="navbar-brand" to="/">Home</Link></li>
 				<li><button type="button" className="btn" onClick={() => { history("/add-user");}}>Add User</button></li>
             </ul>
         </div>

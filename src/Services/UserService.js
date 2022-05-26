@@ -27,6 +27,14 @@ export default {
 		}
 	},
 
+	updateUser: async (id,user) => {
+		try{
+			const resp = await axios.post(`http://localhost:3333/users/${id}`, user);
+		} catch(error){
+			throw error;
+		}
+	},
+
 	deleteUser: async (id) => {
 		try{
 			const resp = await axios.delete(`http://localhost:3333/users/${id}`);

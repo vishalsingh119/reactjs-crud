@@ -36,10 +36,10 @@ const AddUser = () =>{
 					</div>
 					<div className="panel-content">
 						<form onSubmit={e=> onSubmit(e)}>
-							<div class="form-wrapper">
-								<div class="left-wrapper">
-									<div class="form-group">
-										<label for="username">Username</label>
+							<div className="form-wrapper">
+								<div className="left-wrapper">
+									<div className="form-group">
+										<label htmlFor="username">Username</label>
 										<input 
 											type="text"  
 											placeholder='Enter User Name'
@@ -48,8 +48,8 @@ const AddUser = () =>{
 											onChange={e=> onInputChange(e)}
 											required="required"/>
 									</div>
-									<div class="form-group">
-										<label for="name">Name</label>
+									<div className="form-group">
+										<label htmlFor="name">Name</label>
 										<input 
 											type="text"  
 											placeholder='Enter Name'
@@ -60,9 +60,9 @@ const AddUser = () =>{
 									</div>
 								</div>
 
-								<div class="right-wrapper">
-									<div class="form-group">
-										<label for="name">Email</label>
+								<div className="right-wrapper">
+									<div className="form-group">
+										<label htmlFor="name">Email</label>
 										<input 
 											type="email"  
 											placeholder='Enter Email'
@@ -71,8 +71,8 @@ const AddUser = () =>{
 											onChange={e=> onInputChange(e)}
 											required="required"/>
 									</div>
-									<div class="form-group">
-										<label for="name">Phone</label>
+									<div className="form-group">
+										<label htmlFor="name">Phone</label>
 										<input 
 											type="text"  
 											placeholder='Enter Phone No.'
@@ -84,8 +84,8 @@ const AddUser = () =>{
 								</div>
 							</div>
 
-							<div class="form-group">
-								<button type="submit" className="submit-btn">Register</button>
+							<div className="form-group">
+								<button type="submit" className="submit-btn">Add User</button>
 							</div>
 							
 						</form>
