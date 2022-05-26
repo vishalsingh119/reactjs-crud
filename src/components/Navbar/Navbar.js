@@ -12,11 +12,12 @@ const Navbar = () => {
                 <span className="line line2"></span>
                 <span className="line line3"></span>
             </div>
-            <ul className="menu-items">
-                <li><Link classNameName="navbar-brand" to="/">Home</Link></li>
-				<li><button type="button" class="btn btn-elegant waves-effect waves-light">Add User</button></li>
-            </ul>
+
             <h1 className="logo">React App</h1>
+            <ul className="menu-items">
+                <li><Link className="navbar-brand" to="/">Home</Link></li>
+				<li><button type="button" className="btn btn-elegant waves-effect waves-light">Add User</button></li>
+            </ul>
         </div>
     </nav>
   );

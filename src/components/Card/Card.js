@@ -1,11 +1,36 @@
-const Card = () => {
+import './Card.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope, faPhone, faGlobe } from '@fortawesome/free-solid-svg-icons'
+
+
+
+const Card = (props) => {
+	const { user } = props;
 	return (
 		<>
 		<div className="card">
-        <img className="card-img-top"  alt="Card image cap" />
-        <div className="card-body">
-          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        </div>
+			<div className="card-image">
+				<img src={user['profile-pic']} alt="Card image cap" />
+			</div>
+			<div className="card-body">
+				<div className="card-title">{user.name}</div>
+				<div className="user-info">
+					<div className="info-list">
+						<FontAwesomeIcon icon={faEnvelope} />
+						<div className="info-text">{user.email}</div>
+					</div>
+
+					<div className="info-list">
+						<FontAwesomeIcon icon={faPhone} />
+						<div className="info-text">{user.phone}</div>
+					</div>
+
+					<div className="info-list">
+						<FontAwesomeIcon icon={faGlobe} />
+						<div className="info-text">{user.website}</div>
+					</div>
+				</div>
+			</div>
       </div>
 	  </>
 	)
