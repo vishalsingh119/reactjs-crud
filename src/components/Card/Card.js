@@ -35,7 +35,7 @@ const Card = (props) => {
 	const deleteUser = async (id) => {
 		UserService.deleteUser(id)
 		.then(response => {
-			setUsers(response);
+			setUsers(response.data);
 			notify();
 			alert('User Deleted Successfully');
 			loadUserData();
