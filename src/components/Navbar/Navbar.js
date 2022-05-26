@@ -1,8 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Navbar.scss';
+import { useNavigate } from "react-router-dom";
+
 
 const Navbar = () => {
+    const history = useNavigate();
+
 	return (
 	  <nav className="navbar">
         <div className="navbar-container container">
@@ -16,7 +20,7 @@ const Navbar = () => {
             <h1 className="logo">React App</h1>
             <ul className="menu-items">
                 <li><Link className="navbar-brand" to="/">Home</Link></li>
-				<li><button type="button" className="btn btn-elegant waves-effect waves-light">Add User</button></li>
+				<li><button type="button" className="btn" onClick={() => { history("/add-user");}}>Add User</button></li>
             </ul>
         </div>
     </nav>
