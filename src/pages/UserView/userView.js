@@ -15,7 +15,6 @@ const UserView = () => {
 	const loadUserData = async () =>{
 		await UserService.getUser(id)
 		.then(response => {
-			console.log(response);
 			setUser(response)
 		}).catch( err => {
 			console.log(err)
@@ -44,39 +43,49 @@ const UserView = () => {
 									</span>
 									</li>
 									<li>
-									<span className="bold">Email:</span>
-									<span className="panel-content__base-info__item--email">
-										<a href="mailto: Johan Edison@gmail.com"> {user.email}</a> 
-									</span>
+										<span className="bold">Email:</span>
+										<span className="panel-content__base-info__item--email">
+											<span> {user.email}</span> 
+										</span>
 									</li>
-									<li>
-									<span className="bold">Location:</span>
-									<span className="panel-content__base-info__item--location">
-									{user.address['city']}
-									</span>
-									</li>
+									{/* {
+										user.address['city'] ? 
+										<li>
+										<span className="bold">Location:</span>
+										<span className="panel-content__base-info__item--location">
+											{user.address['city']}
+										</span>
+										</li> : null
+									} */}
+									
 								</ul>
 							</div>
 						</div>
 						<div className="panel-content__right">
 							<div className="panel-content__base-info">
 								<ul>
-									<li>
+									{/* {
+										user.company['name'] ? 
+										<li>
 										<span className="bold">Company:</span>
 										<span>
 										{user.company['name']}
 										</span>
-									</li>
+										</li> : null
+									} */}
 									<li>
 										<span className="bold">Phone:</span>
 										<span>{user.phone}</span>
 									</li>
-									<li>
+									{/* {
+										user.address['city'] ? 
+										<li>
 										<span className="bold">Location:</span>
 										<span>
 										{user.address['city']}
 										</span>
-									</li>
+									</li> : null
+									} */}
 								</ul>
 							</div>
 						</div>

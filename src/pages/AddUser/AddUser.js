@@ -11,6 +11,7 @@ const AddUser = () =>{
 		username: '',
 		email:'',
 		phone:'',
+		website: 'test.com',
 		'profile-pic': 'https://avatars.dicebear.com/api/avataaars/2.svg'
 	});
 	const {name,username,email,phone} = user;

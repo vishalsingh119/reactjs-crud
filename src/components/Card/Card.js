@@ -4,11 +4,14 @@ import { faEnvelope, faPhone, faGlobe,faPenToSquare,faTrash,faHeart, faEye } fro
 import React, {useState, useEffect} from 'react';
 import UserService from '../../Services/UserService';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Card = (props) => {
 	const { user } = props;
 	const [users, setUsers] = useState([]);
+	const [like, setLike] = useState(false);
     const history = useNavigate();
 
 
@@ -25,14 +28,25 @@ const Card = (props) => {
 		})
 	}
 
+	const notify = () => {
+		toast("Wow so easy!")
+	};
+
 	const deleteUser = async (id) => {
 		UserService.deleteUser(id)
 		.then(response => {
 			setUsers(response);
+			notify();
+			alert('User Deleted Successfully');
 			loadUserData();
 		}).catch( err => {
 			console.log(err)
 		})
+	}
+
+	const toggleLike = () =>{
+		setLike(!like);
+		console.log(like);
 	}
 
 	return (
@@ -69,8 +83,8 @@ const Card = (props) => {
 					</div>
 
 					<div className="action-list">
-						<button className="btn-icon" title="Like">
-							<FontAwesomeIcon className="icon-heart" icon={faHeart} />
+						<button className="btn-icon" title="Like" onClick={toggleLike}>
+							<FontAwesomeIcon className={like ? 'icon-heart active': 'icon-heart'} icon={faHeart} />
 						</button>
 					</div>
 
