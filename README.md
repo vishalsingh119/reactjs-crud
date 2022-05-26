@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## NPM Library used in this project - 
+Json-server - Fake API Server
+concurrently- run multiple npm cmd 
+axios- to fetch API Data
+toastify - to show toast on action like delete, update etc
+react fontawesome- for icon's
+
 ## Available Scripts
 
 In the project directory, you can run:
