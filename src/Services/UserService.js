@@ -13,7 +13,16 @@ export default {
 
 	getUser: async (id) => {
 		try{
-			const resp = await axios.get(`configData.USER_API_URL/${id}`);
+			const resp = await axios.get(configData.USER_API_URL/+ id);
+			return resp.data;
+		} catch(error){
+			throw error;
+		}
+	},
+
+	deleteUser: async (id) => {
+		try{
+			const resp = await axios.delete(configData.USER_API_URL/+ id);
 			return resp.data;
 		} catch(error){
 			throw error;
