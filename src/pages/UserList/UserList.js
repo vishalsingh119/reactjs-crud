@@ -1,6 +1,6 @@
 import Card from '../../components/Card/Card';
 
-const Home = () => {
+const UserList = () => {
 	return (
 		<div>
 			Home
@@ -9,4 +9,4 @@ const Home = () => {
 	)
 }
 
-export default Home;
+export default UserList;

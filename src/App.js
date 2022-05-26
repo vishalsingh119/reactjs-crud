@@ -1,6 +1,12 @@
 import UserList from './pages/UserList/UserList';
-import UserView from './pages/UserList/UserView';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import UserView from './pages/UserView/UserView';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
+import Navbar from './components/Navbar/Navbar';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import React from 'react'; 
 
 function App() {
@@ -8,8 +14,14 @@ function App() {
     <Router>
     <div className="App">
       <Navbar />
-      <UserList />
-      <UserView />
+      <Routes>
+        <Route exact path="/" element={<UserList />}></Route>
+        <Route exact path="/view" element={<UserView /> }></Route>
+        {/* <Route exact path="/add" element={<AddUser /> }></Route>
+        <Route exact path="/edit/:id" element={<EditUser /> }></Route> */}
+        <Route exact  path="*" element={<PageNotFound /> }></Route>
+
+      </Routes>
     </div>
     </Router>
   );
