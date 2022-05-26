@@ -18,7 +18,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route exact path="/" element={<UserList />}></Route>
-        <Route exact path="/view" element={<UserView /> }></Route>
+        <Route exact path="/view-user/:id" element={<UserView /> }></Route>
         <Route exact path="/add-user" element={<AddUser /> }></Route>
         <Route exact path="/edit/:id" element={<EditUser /> }></Route>
         <Route exact  path="*" element={<PageNotFound /> }></Route>

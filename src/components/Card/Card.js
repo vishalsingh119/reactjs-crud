@@ -62,7 +62,7 @@ const Card = (props) => {
 				{/* user action's like edit, delete etc */}
 				<div className="user-action">
 					<div className="action-list">
-						<button className="btn-icon" title="Like" onClick={() => { history(`/edit/${user.id}`);}}>
+						<button className="btn-icon" title="Like" onClick={() => { history(`/view-user/${user.id}`);}}>
 						<FontAwesomeIcon icon={faEye} />
 						</button>
 					</div>
@@ -74,7 +74,7 @@ const Card = (props) => {
 					</div>
 
 					<div className="action-list">
-						<button className="btn-icon" title="Edit User">
+						<button className="btn-icon" title="Edit User" onClick={() => { history(`/edit/${user.id}`);}}>
 							<FontAwesomeIcon className="icon-pencil" icon={faPenToSquare} />
 						</button>
 					</div>
