@@ -2,7 +2,7 @@ import Card from '../../components/Card/Card';
 
 const UserList = () => {
 	return (
-		<div>
+		<div className='body-wrapper container'>
 			Home
       		<Card />
 		</div>
