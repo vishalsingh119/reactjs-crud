@@ -25,7 +25,7 @@ const UserList = () => {
 			{
 				user.map( (user, index)=>{
 					return (
-						<Card key={index} user={user} />
+						<Card key={index} user={user} updateData={loadUserData}/>
 					)
 				})
 			}

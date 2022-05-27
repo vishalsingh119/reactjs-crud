@@ -37,55 +37,37 @@ const UserView = () => {
 							<div className="panel-content__base-info">
 								<ul>
 									<li>
+										<span className="bold">Username:</span>
+										<span>
+											<span> {user.username}</span> 
+										</span>
+									</li>
+									<li>
 									<span className="bold">Name:</span>
-									<span className="panel-content__base-info__item--name">
+									<span>
 										{user.name}
 									</span>
 									</li>
 									<li>
 										<span className="bold">Email:</span>
-										<span className="panel-content__base-info__item--email">
+										<span>
 											<span> {user.email}</span> 
 										</span>
 									</li>
-									{/* {
-										user.address['city'] ? 
-										<li>
-										<span className="bold">Location:</span>
-										<span className="panel-content__base-info__item--location">
-											{user.address['city']}
-										</span>
-										</li> : null
-									} */}
-									
 								</ul>
 							</div>
 						</div>
 						<div className="panel-content__right">
 							<div className="panel-content__base-info">
 								<ul>
-									{/* {
-										user.company['name'] ? 
-										<li>
-										<span className="bold">Company:</span>
-										<span>
-										{user.company['name']}
-										</span>
-										</li> : null
-									} */}
+									<li>
+										<span className="bold">Website:</span>
+										<span>{user.website}</span>
+									</li>
 									<li>
 										<span className="bold">Phone:</span>
 										<span>{user.phone}</span>
 									</li>
-									{/* {
-										user.address['city'] ? 
-										<li>
-										<span className="bold">Location:</span>
-										<span>
-										{user.address['city']}
-										</span>
-									</li> : null
-									} */}
 								</ul>
 							</div>
 						</div>

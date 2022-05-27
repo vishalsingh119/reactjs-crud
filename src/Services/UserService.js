@@ -29,7 +29,7 @@ export default {
 
 	updateUser: async (id,user) => {
 		try{
-			const resp = await axios.post(`http://localhost:3333/users/${id}`, user);
+			const resp = await axios.put(`http://localhost:3333/users/${id}`, user);
 		} catch(error){
 			throw error;
 		}

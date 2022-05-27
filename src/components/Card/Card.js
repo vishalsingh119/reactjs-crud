@@ -1,44 +1,35 @@
 import './Card.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faGlobe,faPenToSquare,faTrash,faHeart, faEye } from '@fortawesome/free-solid-svg-icons'
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import UserService from '../../Services/UserService';
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Card = (props) => {
-	const { user } = props;
+const Card = ({user, updateData}) => {
 	const [users, setUsers] = useState([]);
 	const [like, setLike] = useState(false);
     const history = useNavigate();
 
-
-	useEffect(() => {
-		loadUserData();
-	},[])
-
-	const loadUserData = async () =>{
-		UserService.getUserList()
-		.then(response => {
-			setUsers(response)
-		}).catch( err => {
-			console.log(err)
-		})
-	}
-
 	const notify = () => {
-		toast("Wow so easy!")
+		toast.dark('🦄 User Deleted', {
+			position: "top-right",
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			});
 	};
 
 	const deleteUser = async (id) => {
 		UserService.deleteUser(id)
 		.then(response => {
-			setUsers(response.data);
 			notify();
-			alert('User Deleted Successfully');
-			loadUserData();
+			updateData();
 		}).catch( err => {
 			console.log(err)
 		})
@@ -51,6 +42,7 @@ const Card = (props) => {
 
 	return (
 		<div className="card">
+			<ToastContainer />
 			<div className="card-image">
 				<img src={user['profile-pic']} alt="Card image cap" />
 			</div>
