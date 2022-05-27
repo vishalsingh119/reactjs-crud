@@ -9,7 +9,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Card = ({user, updateData}) => {
-	const [users, setUsers] = useState([]);
 	const [like, setLike] = useState(false);
     const history = useNavigate();
 
