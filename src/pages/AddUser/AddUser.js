@@ -36,7 +36,7 @@ const AddUser = () =>{
 	}
 
 	const notify = () => {
-		toast.success('🦄 User Created', {
+		toast.success('👤 User Created', {
 			position: "top-right",
 			autoClose: 5000,
 			hideProgressBar: false,

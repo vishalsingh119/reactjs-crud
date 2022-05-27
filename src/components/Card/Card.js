@@ -14,7 +14,7 @@ const Card = ({user, updateData}) => {
     const history = useNavigate();
 
 	const notify = () => {
-		toast.dark('🦄 User Deleted', {
+		toast.dark('👤 User Deleted', {
 			position: "top-right",
 			autoClose: 5000,
 			hideProgressBar: false,
@@ -27,7 +27,7 @@ const Card = ({user, updateData}) => {
 
 	const deleteUser = async (id) => {
 		UserService.deleteUser(id)
-		.then(response => {
+		.then(() => {
 			notify();
 			updateData();
 		}).catch( err => {

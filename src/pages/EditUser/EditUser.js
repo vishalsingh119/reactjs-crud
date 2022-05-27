@@ -42,7 +42,7 @@ const EditUser = () => {
 	  };
 
 	  const notify = () => {
-		toast.success('🦄 User Updated', {
+		toast.success('👤 User Updated', {
 			position: "top-right",
 			autoClose: 5000,
 			hideProgressBar: false,

@@ -80,6 +80,15 @@
       "phone": "8765432123",
       "website": "test.com",
       "profile-pic": "https://avatars.dicebear.com/api/avataaars/de949d3c-6140-4f03-8df0-cb2209f14210.svg"
+    },
+    {
+      "id": "c43883e1-fd00-4ccd-8844-945514bc8a6b",
+      "name": "Cassady Gill",
+      "username": "buvynoweju",
+      "email": "fadapumogo@mailinator.com",
+      "phone": "9879876543",
+      "website": "test.com",
+      "profile-pic": "https://avatars.dicebear.com/api/avataaars/bda6ab20-0d71-4382-ac59-8f027fa18717.svg"
     }
   ]
 }
